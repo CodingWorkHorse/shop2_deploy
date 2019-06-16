@@ -1,0 +1,235 @@
+
+<% if current_user%>
+
+
+<% if current_user.driver? || current_user.admin? || current_user.warehouse? %>
+
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<% if current_user.admin? %>
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.number_field :user, id: :order_user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :order_email %>
+  </div>
+
+  <% end %>
+
+  <% if current_user.warehouse? %>
+
+  <div class="field">
+    <%= form.label :status %>
+<select name="order[status]" id="status">
+    <option value="Open">Open</option>
+        <option value="Fulfilled">Fulfilled</option>
+  </select>
+
+  </div>
+
+  <% end %>
+
+    <% if current_user.driver? %>
+
+  <div class="field">
+    <%= form.label :status %>
+<select name="order[status]" id="status">
+    <option value="Fulfilled">Fulfilled</option>
+        <option value="Delivered">Delivered</option>
+  </select>
+
+  </div>
+
+  <% end %>
+
+
+<% if current_user.admin? %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :order_status %>
+
+  </div>
+
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :order_address %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :town %>
+    <%= form.text_field :town, id: :order_town %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode, id: :order_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lattitude %>
+    <%= form.text_field :lattitude, id: :order_lattitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, id: :order_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :route %>
+    <%= form.number_field :route, id: :order_route %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stop_on_route %>
+    <%= form.number_field :stop_on_route, id: :order_stop_on_route %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total, id: :order_total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_date %>
+    <%= form.text_field :order_date, id: :order_order_date %>
+  </div>
+    <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <% end %>
+
+  <% if current_user.driver? || current_user.warehouse?%>
+  <div class=”actions”>
+   <button type="submit" value="Submit" class="update_button">Update</button>
+  </div>
+<% end %>
+
+
+<% end %>
+
+<% else %>
+
+
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user %>
+     <select name="order[user]" id="user">
+    <option value="<%= current_user.id %>"><%= current_user.email%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <select name="order[email]" id="email">
+    <option value="<%= current_user.email %>"><%= current_user.email%></option>
+  </select>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :address %>
+        <select name="order[address]" id="address">
+    <option value="<%= current_user.address %>"><%= current_user.address%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :town %>
+        <select name="order[town]" id="town">
+    <option value="<%= current_user.town %>"><%= current_user.town%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+        <select name="order[zipcode]" id="zipcode">
+    <option value="<%= current_user.zipcode %>"><%= current_user.zipcode%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :lattitude %>
+        <select name="order[lattitude]" id="lattitude">
+    <option value="<%= current_user.lattitude %>"><%= current_user.lattitude%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+        <select name="order[longitude]" id="longitude">
+    <option value="<%= current_user.longitude %>"><%= current_user.longitude%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :route %>
+        <select name="order[route]" id="route">
+    <option value="<%= current_user.route %>"><%= current_user.route%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :stop_on_route %>
+        <select name="order[stop_on_route]" id="stop_on_route">
+    <option value="<%= current_user.stop_on_route %>"><%= current_user.stop_on_route%></option>
+  </select>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+
+
+  </div>
+
+  <div class="field">
+    <%= form.label :order_date %>
+        <select name="order[order_date]" id="order_date">
+    <option value="<%= Date.today %>"><%= Date.today %></option>
+  </select>
+  </div>
+
+  <div class=”actions”>
+   <button type="submit" value="Submit" class="Submit_button">Place Order</button>
+  </div>
+
+<% end %>
+
+<% end %>
+
+<% else %>
+You are not signed in!
+
+<a href="<%= login_path %>">Log In</a>
+<% end %>
+

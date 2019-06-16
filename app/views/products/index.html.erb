@@ -1,0 +1,52 @@
+
+<% if current_user && current_user.admin?%>
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+
+<div class="table_div">
+<table>
+
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+        <td>
+            <%= image_tag(product.image_url, class: 'list_image') %>
+        </td>
+        <td class="list_description">
+          <dl>
+          <dt><%= product.title %><dt>
+            <dd><%= truncate(strip_tags(product.description), length: 80) %></dd></dt>
+           </dl> 
+          </td>
+        <td><%= product.category %></td>
+       <td> <%= number_to_currency(product.price) %></td>
+        <td class="list_actions"><%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+</div>
+
+<% else %>
+<div class="error_access_denied">
+  <a href="<%= home_path %>">
+<img src="http://baumcube.weebly.com/uploads/6/5/8/4/65844733/something-s-not-quite-right-icon_orig.png" alt="404 Page Not Found" width="943px" height="400px" style="text-align:center;"></a>
+
+<h1>Something Doesn't Quite Line Up</h1>
+</div>
+<div class="error_button_home">
+<a href="<%= home_path %>" >Home</a>
+</div>
+<% end %>

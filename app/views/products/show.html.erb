@@ -1,0 +1,125 @@
+<% if current_user && current_user.admin?%>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @product.image_url %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
+
+<% else %>
+
+<div class="Product_Show_Page">
+
+
+<table>
+  <tr>
+    <th><img src="<%= @product.image_url %>" alt="<%= @product.title %>" width="500em" height= auto></th>
+    <th>
+
+      <table>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><h1 class="product_title"> <%= @product.title %> </h1></tr>
+        <tr><p1 class="product_category">Category: <a href="<%= store_all_path %>"><%= @product.category %></a></p1></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><p1 class="product_description"><%= @product.description %></p1></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><p1 class="product_price"> Price: <%= number_to_currency(@product.price) %> </p1></tr>
+        <tr><br></tr>
+         <tr><br></tr>
+        <tr>
+                <%= button_to 'Add to Cart', line_items_path(product_id: @product), :class => 'add_to_cart_button' %>
+        </tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+        <tr><br></tr>
+      </table>
+
+
+
+
+<!--
+
+
+    <% @products.each do |product| %>
+      <tr>
+        <td class="list_description">
+          <dl>
+          <dt><%= product.title %> <%= @current_user%><dt>
+           </dl> 
+          </td>
+       <td> <%= number_to_currency(product.price) %></td>
+      </tr>
+    <% end %>
+
+  -->
+
+
+
+
+
+
+
+
+
+      <!--<h1 class="product_title"> <%= @product.title %> </h1>
+      
+      <p1 class="product_category">Category: <a href="<%= store_all_path %>"><%= @product.category %></a></p1>
+      <br>
+      <br>
+      <p1 class="product_description"><%= @product.description %></p1>
+      <br>
+      <br>
+      <p1 class="product_price">Price: <%= number_to_currency(@product.price) %></p1>-->
+
+
+    </th>
+  </tr>
+
+
+
+
+
+</table>
+
+</div>
+
+
+<% end %>

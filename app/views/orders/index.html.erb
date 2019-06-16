@@ -1,0 +1,212 @@
+  <% if current_user && current_user.admin?%>
+
+
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Address</th>
+      <th>Town</th>
+      <th>Zipcode</th>
+      <th>Lattitude</th>
+      <th>Longitude</th>
+      <th>Route</th>
+      <th>Stop on route</th>
+      <th>Total</th>
+      <th>Order date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.user %></td>
+        <td><%= order.email %></td>
+        <td><%= order.status %></td>
+        <td><%= order.address %></td>
+        <td><%= order.town %></td>
+        <td><%= order.zipcode %></td>
+        <td><%= order.lattitude %></td>
+        <td><%= order.longitude %></td>
+        <td><%= order.route %></td>
+        <td><%= order.stop_on_route %></td>
+        <td><%= order.total %></td>
+        <td><%= order.order_date %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
+<% else %>
+  <% if current_user && current_user.driver?%>
+
+
+<h1>My Deliveries</h1>
+<h4>Signed In As <%= current_user.email %></h4>
+<h5> Date: <%= Date.today %></h5>
+<br>
+
+
+<h3 style="text-align: center;">Route <%= current_user.route %></h3>
+<table style="text-align: center;">
+  <thead>
+    <% if current_user.route != nil %>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Address</th>
+      <th>Town</th>
+      <th>Zipcode</th>
+      <th>Lattitude</th>
+      <th>Longitude</th>
+      <th>Route</th>
+      <th>Stop on route</th>
+      <th>Total</th>
+      <th>Order date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% end %>
+
+  <tbody>
+    <% @orders.each do |order| %>
+    <% if order.route == current_user.route && order.status != "Delivered"%>
+      <tr>
+        <td><%= order.user %></td>
+        <td><%= order.email %></td>
+        <td><%= order.status %></td>
+        <td><%= order.address %></td>
+        <td><%= order.town %></td>
+        <td><%= order.zipcode %></td>
+        <td><%= order.lattitude %></td>
+        <td><%= order.longitude %></td>
+        <td><%= order.route %></td>
+        <td><%= order.stop_on_route %></td>
+        <td><%= order.total %></td>
+        <td><%= order.order_date %></td>
+        <td><%= link_to 'Show', order %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<h3 style="text-align: center;">Route <%= current_user.stop_on_route %></h3>
+<table>
+  <thead>
+    <% if current_user.stop_on_route != nil %>
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Address</th>
+      <th>Town</th>
+      <th>Zipcode</th>
+      <th>Lattitude</th>
+      <th>Longitude</th>
+      <th>Route</th>
+      <th>Stop on route</th>
+      <th>Total</th>
+      <th>Order date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% end %>
+
+  <tbody>
+    <% @orders.each do |order| %>
+    <% if order.route == current_user.stop_on_route && order.status != "Delivered" %>
+      <tr>
+        <td><%= order.user %></td>
+        <td><%= order.email %></td>
+        <td><%= order.status %></td>
+        <td><%= order.address %></td>
+        <td><%= order.town %></td>
+        <td><%= order.zipcode %></td>
+        <td><%= order.lattitude %></td>
+        <td><%= order.longitude %></td>
+        <td><%= order.route %></td>
+        <td><%= order.stop_on_route %></td>
+        <td><%= order.total %></td>
+        <td><%= order.order_date %></td>
+        <td><%= link_to 'Show', order %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br>
+
+<% else %>
+
+<% end %>
+
+ <% if current_user && current_user.warehouse?%>
+
+<h1>Open Orders</h1>
+<br>
+
+
+<h3 style="text-align: center;">Orders</h3>
+<table>
+  <thead>
+
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Zipcode</th>
+      <th>Route</th>
+      <th>Total</th>
+      <th>Order date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @orders.each do |order| %>
+    <% if order.status != "Fulfilled" && order.status != "Delivered" %>
+      <tr>
+        <td><%= order.user %></td>
+        <td><%= order.email %></td>
+        <td><%= order.status %></td>
+        <td><%= order.zipcode %></td>
+        <td><%= order.route %></td>
+        <td><%= order.total %></td>
+        <td><%= order.order_date %></td>
+        <td><%= link_to 'Show', order %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% else %>
+
+<% end %>
+
+
+
+<% end %>
+

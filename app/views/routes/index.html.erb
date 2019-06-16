@@ -1,0 +1,124 @@
+
+<% if current_user && current_user.admin?%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Routes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Driver</th>
+      <th>Vehicle</th>
+      <th>Cargo capacity</th>
+      <th>Departure address</th>
+      <th>Departure lattitude</th>
+      <th>Departure longitude</th>
+      <th>Stop 1 address</th>
+      <th>Stop 2 address</th>
+      <th>Stop 3 address</th>
+      <th>Stop 4 address</th>
+      <th>Stop 5 address</th>
+      <th>Stop 6 address</th>
+      <th>Return address</th>
+      <th>Return lattitude</th>
+      <th>Return longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @routes.each do |route| %>
+      <tr>
+        <td><%= route.driver %></td>
+        <td><%= route.vehicle %></td>
+        <td><%= route.cargo_capacity %></td>
+        <td><%= route.departure_address %></td>
+        <td><%= route.departure_lattitude %></td>
+        <td><%= route.departure_longitude %></td>
+        <td><%= route.stop_1_address %></td>
+        <td><%= route.stop_2_address %></td>
+        <td><%= route.stop_3_address %></td>
+        <td><%= route.stop_4_address %></td>
+        <td><%= route.stop_5_address %></td>
+        <td><%= route.stop_6_address %></td>
+        <td><%= route.return_address %></td>
+        <td><%= route.return_lattitude %></td>
+        <td><%= route.return_longitude %></td>
+        <td><%= link_to 'Show', route %></td>
+        <td><%= link_to 'Edit', edit_route_path(route) %></td>
+        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Route', new_route_path %>
+
+
+
+<% else %>
+<% if current_user && current_user.driver?%>
+<h1>My Routes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vehicle</th>
+      <th>Cargo capacity</th>
+      <th>Departure address</th>
+      <th>Departure lattitude</th>
+      <th>Departure longitude</th>
+      <th>Stop 1 address</th>
+      <th>Stop 2 address</th>
+      <th>Stop 3 address</th>
+      <th>Stop 4 address</th>
+      <th>Stop 5 address</th>
+      <th>Stop 6 address</th>
+      <th>Return address</th>
+      <th>Return lattitude</th>
+      <th>Return longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @routes.each do |route| %>
+    <% if route.driver == current_user.email%>
+      <tr>
+        <td><%= route.vehicle %></td>
+        <td><%= route.cargo_capacity %></td>
+        <td><%= route.departure_address %></td>
+        <td><%= route.departure_lattitude %></td>
+        <td><%= route.departure_longitude %></td>
+        <td><%= route.stop_1_address %></td>
+        <td><%= route.stop_2_address %></td>
+        <td><%= route.stop_3_address %></td>
+        <td><%= route.stop_4_address %></td>
+        <td><%= route.stop_5_address %></td>
+        <td><%= route.stop_6_address %></td>
+        <td><%= route.return_address %></td>
+        <td><%= route.return_lattitude %></td>
+        <td><%= route.return_longitude %></td>
+        <td><%= link_to 'Show', route %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+<div class="error_access_denied">
+  <a href="<%= home_path %>">
+<img src="http://baumcube.weebly.com/uploads/6/5/8/4/65844733/something-s-not-quite-right-icon_orig.png" alt="404 Page Not Found" width="943px" height="400px" style="text-align:center;"></a>
+
+<h1>Something Doesn't Quite Line Up</h1>
+</div>
+<div class="error_button_home">
+<a href="<%= home_path %>" >Home</a>
+</div>
+<% end %>
+<% end %>

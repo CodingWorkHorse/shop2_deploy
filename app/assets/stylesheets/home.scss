@@ -1,0 +1,198 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+
+
+
+body {
+    margin: 0;
+    font-family: verdana, arial, helvetica, sans-serif;
+      font-size: 13px;
+  line-height: 18px;
+}
+
+
+.hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+    
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: white; 
+    text-decoration: none;
+    font-size: 1.5em;
+      font-family: verdana, arial, helvetica, sans-serif;
+    
+    /* Border styles */
+    border: 5px solid white; 
+
+
+ -webkit-transition-duration: 0.5s; /* Safari */
+  transition-duration: 0.4s;
+
+}
+
+.hero .btn:hover {
+ margin-top: 45px;
+border: 6px solid white; 
+ font-size: 1.75em;
+
+}
+
+
+
+.at_a_glance{
+background: black;
+    text-align:center;
+    color: white;
+
+
+}
+
+.hero_short {
+    /* Sizing */
+    width: 100vw;
+    height: 50vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero_short h1 {
+    /* Text styles */
+    font-size: 5em;
+    
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+
+.css-slick_display{
+    max-width: 1160px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+.how_it_works_hero {
+    /* Sizing */
+    width: 100vw;
+    height: 82vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/free-photo/healthy-dish-with-chicken-tomatoes-avocado-lettuce-lentil-dark-background_2829-971.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.how_it_works{
+    padding: 56px 53px;
+    width: 840px;
+    background: white;
+    color: black;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content-header{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-style: normal;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 0.1em;
+}
+
+.content-table{
+    display: table;
+}
+
+.content-row{
+    display: table-row;
+    width: 100%;
+}
+
+.content-cell{
+    padding: 48px 35px;
+    display: table-cell;
+    width:50%;
+}
+
+.content{
+    max-width: 1160px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,77 @@
+   <section class="hero_2">
+            <div class="hero-inner">
+                <h1>Store</h1>
+            </div>
+        </section>
+
+
+<!--
+<div class="store">
+
+<div class="filters">
+<a href ="<%= store_all_path %>"><span><button class ="category_button" type="button">All</button></span></a>
+<a href ="<%= store_food_path %>"><span><button class ="category_button" type="button">Food</button></span></a>
+<a href ="<%= store_beverage_path %>"><span><button class ="category_button" type="button">Beverage</button></span></a>
+<a href ="<%= store_today_path %>"><span><button class ="category_button" type="button">Today's Specials</button></span></a>
+</div>
+
+
+
+
+<% @products.each do |product| %>
+<% if product.category == "Beverage" %>
+<div class="entry">
+<%= image_tag(product.image_url) %>
+<h3><%= product.title %></h3>
+<p><%= sanitize(product.description) %></p>
+<div class="price_line">
+<span class="price"><%= number_to_currency(product.price) %></span>
+<%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+</div>
+</div>
+<% end %>
+<% end %>
+</div> -->
+
+
+
+<div class="filters">
+<a href ="<%= store_all_path %>"><span><button class ="category_button" type="button">All</button></span></a>
+<a href ="<%= store_food_path %>"><span><button class ="category_button" type="button">Food</button></span></a>
+<a href ="<%= store_beverage_path %>"><span><button class ="category_button" type="button">Beverage</button></span></a>
+<a href ="<%= store_today_path %>"><span><button class ="category_button" type="button">Today's Specials</button></span></a>
+</div>
+
+                  <div class="store_display">
+
+
+
+
+                  	<% @products.each do |product| %>
+
+               <% if product.category == "Beverage" %>
+      <div class="store_item" style="       background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('<%= product.image_url %>');">
+        
+          <!-- <a href="<%= product_path(product) %>"><img src="<%= product.image_url %>" style="height: 4em; display: block; margin-left: auto; margin-right: auto;"></a> <br> -->
+          <br>
+          <br>
+          <br>
+            <h3 style="text-align: center; font-weight: 500;"><%= product.title %></h3>
+
+            <h5 style="text-align: center; font-weight: 300;"><%= truncate(strip_tags(product.description), length: 150) %></h5>
+            <div class="item_actions">
+            <span class="price"><%= number_to_currency(product.price) %></span>
+
+
+            <br><a href="<%= product_path(product) %>"><button class ="view_item" type="button">View</button></a>
+        </div>
+</div>
+
+
+<% end %>
+<% end %>
+
+</div>
+
+
+

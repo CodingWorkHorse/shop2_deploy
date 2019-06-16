@@ -1,0 +1,98 @@
+<h1 style="font-weight: 40;">Order At a Glance</h1>
+<h3 style="text-align: center; font-weight: 20; font-size: 1em;">Signed in as: <%= current_user.email %>.</h3>
+
+
+<div class="show_order">
+
+<div class="Order_info">
+
+<h1><%= @order.status %> Order</h1>
+<ul>
+<% @order.line_items.each do |item| %>
+  <li><%= item.quantity %> &times; <%= item.product.title %></li>
+  <!--<li><%= image_tag(item.product.image_url) %></li> -->
+<% end %>
+</ul>
+
+<%= render 'form', order: @order, method: :update %>
+
+</div>
+
+
+
+<div class="Delivery_info">
+
+<h1>Delivery Information</h1>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @order.town %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @order.zipcode %>
+</p>
+
+<p>
+  <strong>Lattitude:</strong>
+  <%= @order.lattitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @order.longitude %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @order.route %>
+</p>
+
+<p>
+  <strong>Stop on route:</strong>
+  <%= @order.stop_on_route %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+</p>
+</div>
+
+
+</div>
+<div class="back"><a href="<%= orders_path %>"><button  class ="back_button" type="button">Return to Orders</button></a></div>
+
+
+
+
+
+
+
+

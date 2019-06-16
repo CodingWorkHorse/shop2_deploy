@@ -1,0 +1,171 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+h3{
+	font-size: 1.5em;
+}
+
+h5{
+	text-align: center;
+}
+h4{
+	text-align: center;
+	font-size: 0.75em;
+}
+table{
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1em;
+	margin-bottom: 10em;
+}
+
+
+.show_order{
+	text-align:center;
+}
+
+li{
+	text-decoration: none;
+}
+
+.order_form_content{
+width: 25%;
+height: auto;
+margin-top: 5em;
+margin-bottom: 5em;
+margin-left: auto;
+margin-right: auto;
+	text-align:center;
+	  border-style: solid;
+  border-width: 5px;
+  background-color: #fff;
+}
+
+.actual_content{
+	margin-top: 5em;
+margin-bottom: 5em;
+}
+
+
+
+.Submit_button{
+	border-color:black;
+  border-style: solid;
+  border-width: 0.1em;
+  color: black;
+  text-align: center;
+  padding: 10px 18px;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-family: verdana, arial, helvetica, sans-serif;
+
+
+ -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+
+.Submit_button:hover {
+  background-color: black; 
+  color: white;
+}
+
+.show_order{
+  display: flex;
+flex-direction: row;
+justify-content: space-around;
+width: 100%
+}
+.Order_info{
+display: flex;
+flex-direction: column;
+margin-top: 0.25em;
+margin-bottom: 0.25em;
+
+}
+
+.Delivery_info{
+  display: flex;
+flex-direction: column;
+margin-top: 0.25em;
+margin-bottom: 0.25em;
+margin-left: -60em;
+}
+
+
+
+.actual_info{
+  font-size: 8px;
+}
+
+
+.parent_show_order{
+  display:inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.update_button{
+  border-color:black;
+  border-style: solid;
+  border-width: 0.1em;
+  color: black;
+  text-align: center;
+  padding: 5px 9px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  font-family: verdana, arial, helvetica, sans-serif;
+
+
+ -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+
+.update_button:hover {
+  background-color: black; 
+  color: white;
+}
+
+
+.back_button{
+  border-color:black;
+  border-style: solid;
+  border-width: 0.1em;
+  color: black;
+  text-align: center;
+  padding: 10px 18px;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  font-family: verdana, arial, helvetica, sans-serif;
+
+
+ -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+
+.back_button:hover {
+  background-color: black; 
+  color: white;
+}
+
+.back{
+  text-align:center;
+  margin-bottom: 5em;
+}

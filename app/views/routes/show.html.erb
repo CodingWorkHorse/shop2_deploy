@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @route.driver %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @route.vehicle %>
+</p>
+
+<p>
+  <strong>Cargo capacity:</strong>
+  <%= @route.cargo_capacity %>
+</p>
+
+<p>
+  <strong>Departure address:</strong>
+  <%= @route.departure_address %>
+</p>
+
+<p>
+  <strong>Departure lattitude:</strong>
+  <%= @route.departure_lattitude %>
+</p>
+
+<p>
+  <strong>Departure longitude:</strong>
+  <%= @route.departure_longitude %>
+</p>
+
+<p>
+  <strong>Stop 1 address:</strong>
+  <%= @route.stop_1_address %>
+</p>
+
+<p>
+  <strong>Stop 2 address:</strong>
+  <%= @route.stop_2_address %>
+</p>
+
+<p>
+  <strong>Stop 3 address:</strong>
+  <%= @route.stop_3_address %>
+</p>
+
+<p>
+  <strong>Stop 4 address:</strong>
+  <%= @route.stop_4_address %>
+</p>
+
+<p>
+  <strong>Stop 5 address:</strong>
+  <%= @route.stop_5_address %>
+</p>
+
+<p>
+  <strong>Stop 6 address:</strong>
+  <%= @route.stop_6_address %>
+</p>
+
+<p>
+  <strong>Return address:</strong>
+  <%= @route.return_address %>
+</p>
+
+<p>
+  <strong>Return lattitude:</strong>
+  <%= @route.return_lattitude %>
+</p>
+
+<p>
+  <strong>Return longitude:</strong>
+  <%= @route.return_longitude %>
+</p>
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

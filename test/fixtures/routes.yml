@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver: MyString
+  vehicle: MyString
+  cargo_capacity: 9.99
+  departure_address: MyString
+  departure_lattitude: MyString
+  departure_longitude: MyString
+  stop_1_address: MyString
+  stop_2_address: MyString
+  stop_3_address: MyString
+  stop_4_address: MyString
+  stop_5_address: MyString
+  stop_6_address: MyString
+  return_address: MyString
+  return_lattitude: MyString
+  return_longitude: MyString
+
+two:
+  driver: MyString
+  vehicle: MyString
+  cargo_capacity: 9.99
+  departure_address: MyString
+  departure_lattitude: MyString
+  departure_longitude: MyString
+  stop_1_address: MyString
+  stop_2_address: MyString
+  stop_3_address: MyString
+  stop_4_address: MyString
+  stop_5_address: MyString
+  stop_6_address: MyString
+  return_address: MyString
+  return_lattitude: MyString
+  return_longitude: MyString

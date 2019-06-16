@@ -1,0 +1,56 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.about_us_img {
+    /* Sizing */
+    width: 100vw;
+    height: 80vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.25)), url('https://www.mendix.com/wp-content/uploads/blog-ideal-scrum-team-composition.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.css-dope_display{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.about_us_img_1 {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.25)), url('https://img1.cgtrader.com/items/673912/80c8f0d3b8/commercial-kitchen-v1-3d-model-max-obj-mtl-fbx.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,54 @@
+<% if current_user %>
+<div style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');    background-repeat: no-repeat;     background-attachment: fixed;    background-position: center center;   background-size: cover;">
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="current_cart">
+
+	<div class="cart_content">
+<h2>Thank You For Placing Your Order</h2>
+
+<p1 style="margin-bottom: 2em;">A confirmation email containing your order, and information regarding delivery has been sent to <%= current_user.email %>. As always, we take you satisfaction very seriously and look forward to hearing your feedback.</p1>
+
+
+
+<br>
+
+<br>
+
+<a href="<%= home_path %>" style="color:black; margin-top:1.5em;">Home</a> or <a href="<%= store_all_path %>" style="color:black; margin-top:1.5em;">Store</a>
+
+
+</div>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+<% else %>
+<div class="error_access_denied">
+<img src="http://baumcube.weebly.com/uploads/6/5/8/4/65844733/something-s-not-quite-right-icon_orig.png" alt="404 Page Not Found" width="943px" height="400px" style="text-align:center;">
+
+<h1>Something Doesn't Quite Line Up</h1>
+</div>
+<div class="error_button_home">
+<a href="<%= home_path %>" >Home</a>
+</div>
+<% end %>
